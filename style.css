@@ -2424,3 +2424,43 @@ body {
     color: #ffb3c8;
     opacity: 0.8;
 }
+
+/* Start Screen */
+
+#start-screen {
+    position: fixed;
+    inset: 0;
+    z-index: 1000;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    background: #05010a;
+    text-align: center;
+}
+
+.start-content p {
+    color: white;
+    font-size: 20px;
+    margin-bottom: 25px;
+}
+
+#start-button {
+    padding: 14px 30px;
+
+    border: none;
+    border-radius: 30px;
+
+    background: #ff69b4;
+    color: white;
+
+    font-size: 18px;
+    cursor: pointer;
+
+    transition: transform 0.2s ease;
+}
+
+#start-button:hover {
+    transform: scale(1.08);
+}
