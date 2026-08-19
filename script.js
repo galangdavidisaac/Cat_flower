@@ -44,3 +44,11 @@ window.onload = () => {
 
     requestAnimationFrame(fillBar);
 };
+
+
+const startScreen = document.getElementById("start-screen");
+const startButton = document.getElementById("start-button");
+
+startButton.addEventListener("click", () => {
+    startScreen.style.display = "none";
+});
