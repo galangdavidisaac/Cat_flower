@@ -2438,6 +2438,14 @@ body {
 
     background: #05010a;
     text-align: center;
+
+    opacity: 1;
+    transition: opacity 1s ease;
+}
+
+#start-screen.fade-out {
+    opacity: 0;
+    pointer-events: none;
 }
 
 .start-content p {
