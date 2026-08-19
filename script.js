@@ -53,6 +53,6 @@ startButton.addEventListener("click", () => {
     startScreen.classList.add("fade-out");
 
     setTimeout(() => {
-        startScreen.style.display = "none";
+        startScreen.remove();
     }, 1000);
 });
