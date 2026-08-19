@@ -50,5 +50,9 @@ const startScreen = document.getElementById("start-screen");
 const startButton = document.getElementById("start-button");
 
 startButton.addEventListener("click", () => {
-    startScreen.style.display = "none";
+    startScreen.classList.add("fade-out");
+
+    setTimeout(() => {
+        startScreen.style.display = "none";
+    }, 1000);
 });
