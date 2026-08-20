@@ -45,46 +45,50 @@ window.onload = () => {
     requestAnimationFrame(fillBar);
 };
 
-/* start click catbox*/
-const startScreen = document.getElementById("start-screen");
+/* =================================
+   CAT + BOUQUET
+   ================================= */
+
 const catBox = document.getElementById("cat-box");
 const bouquet = document.getElementById("bouquet");
 const catPrompt = document.querySelector(".cat-prompt");
 const bouquetMessage = document.getElementById("bouquet-message");
 
-catBox.addEventListener("click", () => {
+if (catBox) {
 
-    // Prevent clicking repeatedly
-    catBox.style.pointerEvents = "none";
+    catBox.addEventListener("click", () => {
 
-    // Make the cat react
-    catBox.classList.add("cat-surprise");
+        console.log("CAT CLICKED!");
 
-    // Hide "Tap / Click me"
-    catPrompt.classList.add("hide");
+        catBox.style.pointerEvents = "none";
 
-    // Wait a little before revealing the flowers
-    setTimeout(() => {
+        catBox.classList.add("cat-surprise");
 
-        bouquet.classList.add("show");
+        catPrompt.classList.add("hide");
 
-    }, 600);
+        setTimeout(() => {
+            bouquet.classList.add("show");
+        }, 600);
 
-    // Show the message after the flowers bloom
-    setTimeout(() => {
+        setTimeout(() => {
+            bouquetMessage.classList.add("show");
+        }, 1500);
 
-        bouquetMessage.classList.add("show");
+    });
 
-    }, 1500);
+}
 
-});
 
-/* flower hover*/
+/* =================================
+   FLOWER INTERACTION
+   ================================= */
 
 const flowers = document.querySelectorAll(".flower");
 
 flowers.forEach((flower) => {
+
     flower.addEventListener("click", () => {
         flower.classList.toggle("selected");
     });
+
 });
