@@ -79,11 +79,6 @@ catBox.addEventListener("click", () => {
 
 });
 
-#cat-box.cat-surprise {
-    animation: cat-surprise 0.6s ease;
-}
-
-
 /* flower hover*/
 
 const flowers = document.querySelectorAll(".flower");
