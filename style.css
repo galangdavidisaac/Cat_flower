@@ -2520,3 +2520,107 @@ body {
     transform: scale(1.15);
     filter: drop-shadow(0 0 20px rgba(255, 180, 220, 0.9));
 }
+
+/* =================================
+   FLOWERS FROM THE BOX
+   ================================= */
+
+.cat-stage {
+    position: relative;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    width: min(90vw, 500px);
+    height: 60vh;
+}
+
+#bouquet {
+    position: absolute;
+
+    left: 50%;
+    top: 35%;
+
+    transform: translate(-50%, 30px) scale(0);
+
+    opacity: 0;
+
+    pointer-events: none;
+
+    transition:
+        transform 1.2s cubic-bezier(.17,.67,.35,1.3),
+        opacity 0.8s ease;
+
+    z-index: 5;
+}
+
+#bouquet.show {
+    transform: translate(-50%, 0) scale(1);
+
+    opacity: 1;
+}
+
+.mini-flower {
+    position: absolute;
+
+    font-size: clamp(35px, 10vw, 65px);
+
+    animation: flower-float 2s ease-in-out infinite;
+}
+
+.flower-one {
+    transform: translate(-80px, 10px) rotate(-15deg);
+}
+
+.flower-two {
+    transform: translate(-25px, -25px) rotate(5deg);
+}
+
+.flower-three {
+    transform: translate(30px, -20px) rotate(15deg);
+}
+
+.flower-four {
+    transform: translate(75px, 15px) rotate(20deg);
+}
+
+@keyframes flower-float {
+
+    0%, 100% {
+        margin-top: 0;
+    }
+
+    50% {
+        margin-top: -8px;
+    }
+}
+
+#bouquet-message {
+    margin-top: 10px;
+
+    color: white;
+
+    font-size: clamp(18px, 5vw, 26px);
+
+    text-align: center;
+
+    opacity: 0;
+
+    transform: translateY(15px);
+
+    transition:
+        opacity 0.8s ease,
+        transform 0.8s ease;
+}
+
+#bouquet-message.show {
+    opacity: 1;
+
+    transform: translateY(0);
+}
+
+.cat-prompt.hide {
+    opacity: 0;
+    pointer-events: none;
+}
