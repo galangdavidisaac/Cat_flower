@@ -45,17 +45,21 @@ window.onload = () => {
     requestAnimationFrame(fillBar);
 };
 
-
+/* start click catbox*/
 const startScreen = document.getElementById("start-screen");
-const startButton = document.getElementById("start-button");
+const catBox = document.getElementById("cat-box");
 
-startButton.addEventListener("click", () => {
+catBox.addEventListener("click", () => {
+
     startScreen.classList.add("fade-out");
 
     setTimeout(() => {
         startScreen.remove();
     }, 1000);
+
 });
+
+/* flower hover*/
 
 const flowers = document.querySelectorAll(".flower");
 
