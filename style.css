@@ -2627,6 +2627,9 @@ body {
 #cat-dance-gif {
     position: absolute;
 
+    left: 50%;
+    top: 50%;
+
     width: min(70vw, 360px);
     max-height: 55vh;
 
@@ -2636,7 +2639,7 @@ body {
 
     pointer-events: none;
 
-    transform: scale(0.9);
+    transform: translate(-50%, -50%) scale(0.9);
 
     transition:
         opacity 1s ease,
@@ -2648,20 +2651,33 @@ body {
 #cat-dance-gif.show {
     opacity: 1;
 
-    transform: scale(1);
+    transform: translate(-50%, -50%) scale(1);
+
+    pointer-events: none;
 }
 
-.cat-stage.fade-out {
+#cat-box.scene-fade-out {
     opacity: 0;
 
     transform: scale(0.95);
 
+    transition:
+        opacity 1.2s ease,
+        transform 1.2s ease;
+
     pointer-events: none;
+}
+
+#bouquet.scene-fade-out {
+    opacity: 0;
+
+    transform: translate(-50%, 0) scale(0.8);
 
     transition:
         opacity 1.2s ease,
         transform 1.2s ease;
 }
+
 
 #bouquet-message.fade-out {
     opacity: 0;
