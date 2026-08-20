@@ -86,10 +86,19 @@ window.onload = () => {
             }, 600);
 
             setTimeout(() => {
-
+            
                 bouquetMessage.classList.add("show");
-
+            
             }, 1500);
+            
+            
+            /* Start dancing after the flowers and message */
+            
+            setTimeout(() => {
+            
+                catBox.classList.add("cat-dancing");
+            
+            }, 3500);
 
         });
 
