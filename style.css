@@ -2620,61 +2620,55 @@ body {
     transform: translateY(0);
 }
 
-#cat-box.cat-surprise {
-    animation:
-        cat-surprise 0.6s ease
-        /* cat-breathe 2s ease-in-out 0.6s infinite; */
-}
-
-@keyframes cat-surprise {
-
-    0% {
-        transform: scale(1);
-    }
-
-    30% {
-        transform: scale(1.08) rotate(-3deg);
-    }
-
-    60% {
-        transform: scale(1.08) rotate(3deg);
-    }
-
-    100% {
-        transform: scale(1) rotate(0);
-    }
-}
-
-
-.cat-prompt.hide {
-    opacity: 0;
-    pointer-events: none;
-}
-
 /* =================================
-   CAT DANCE
+   DANCING CAT GIF
    ================================= */
 
-#cat-box.cat-dancing {
-    animation: cat-dance 0.5s ease-in-out infinite;
+#cat-dance-gif {
+    position: absolute;
+
+    width: min(70vw, 360px);
+    max-height: 55vh;
+
+    object-fit: contain;
+
+    opacity: 0;
+
+    pointer-events: none;
+
+    transform: scale(0.9);
+
+    transition:
+        opacity 1s ease,
+        transform 1s ease;
+
+    z-index: 10;
 }
 
-@keyframes cat-dance {
+#cat-dance-gif.show {
+    opacity: 1;
 
-    0%, 100% {
-        transform: translateY(0) rotate(0deg);
-    }
+    transform: scale(1);
+}
 
-    25% {
-        transform: translateY(-10px) rotate(-8deg);
-    }
+.cat-stage.fade-out {
+    opacity: 0;
 
-    50% {
-        transform: translateY(0) rotate(0deg);
-    }
+    transform: scale(0.95);
 
-    75% {
-        transform: translateY(-10px) rotate(8deg);
-    }
+    pointer-events: none;
 
+    transition:
+        opacity 1.2s ease,
+        transform 1.2s ease;
+}
+
+#bouquet-message.fade-out {
+    opacity: 0;
+
+    transform: translateY(-10px);
+
+    transition:
+        opacity 1s ease,
+        transform 1s ease;
 }
