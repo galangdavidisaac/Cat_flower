@@ -83,24 +83,6 @@ catBox.addEventListener("click", () => {
     animation: cat-surprise 0.6s ease;
 }
 
-@keyframes cat-surprise {
-
-    0% {
-        transform: scale(1);
-    }
-
-    30% {
-        transform: scale(1.08) rotate(-3deg);
-    }
-
-    60% {
-        transform: scale(1.08) rotate(3deg);
-    }
-
-    100% {
-        transform: scale(1) rotate(0);
-    }
-}
 
 /* flower hover*/
 
