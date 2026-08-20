@@ -2425,7 +2425,9 @@ body {
     opacity: 0.8;
 }
 
-/* Start Screen */
+/* =================================
+   CAT OPENING SCENE
+   ================================= */
 
 #start-screen {
     position: fixed;
@@ -2448,31 +2450,62 @@ body {
     pointer-events: none;
 }
 
-.start-content p {
-    color: white;
-    font-size: 20px;
-    margin-bottom: 25px;
+.cat-scene {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+
+    width: 100%;
 }
 
-#start-button {
-    padding: 14px 30px;
+#cat-box {
+    width: min(70vw, 360px);
+    max-height: 55vh;
 
-    border: none;
-    border-radius: 30px;
+    object-fit: contain;
 
-    background: #ff69b4;
-    color: white;
-
-    font-size: 18px;
     cursor: pointer;
 
-    transition: transform 0.2s ease;
+    animation: cat-breathe 2s ease-in-out infinite;
 }
 
-#start-button:hover {
-    transform: scale(1.08);
+.cat-prompt {
+    margin-top: 20px;
+
+    color: white;
+    font-size: clamp(18px, 5vw, 26px);
+
+    cursor: pointer;
+
+    animation: prompt-pulse 1.5s ease-in-out infinite;
 }
 
+@keyframes cat-breathe {
+
+    0%, 100% {
+        transform: translateY(0);
+    }
+
+    50% {
+        transform: translateY(-6px);
+    }
+}
+
+@keyframes prompt-pulse {
+
+    0%, 100% {
+        opacity: 0.6;
+        transform: scale(1);
+    }
+
+    50% {
+        opacity: 1;
+        transform: scale(1.05);
+    }
+}
+
+/* flower hovering */
 
 .flower {
     cursor: pointer;
