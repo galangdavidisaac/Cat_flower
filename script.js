@@ -66,7 +66,6 @@ window.onload = () => {
     const bouquet = document.getElementById("bouquet");
     const catPrompt = document.querySelector(".cat-prompt");
     const bouquetMessage = document.getElementById("bouquet-message");
-    const catStage = document.querySelector(".cat-stage");
     const catDanceGif = document.getElementById("cat-dance-gif");
 
     if (catBox) {
@@ -94,14 +93,17 @@ window.onload = () => {
             }, 1500);
 
             setTimeout(() => {
-
-                // Fade out the flower + box scene
-                catStage.classList.add("fade-out");
+            
+                // Fade out the original cat + box
+                catBox.classList.add("scene-fade-out");
+            
+                // Fade out the bouquet
+                bouquet.classList.add("scene-fade-out");
             
                 // Fade out the message
                 bouquetMessage.classList.add("fade-out");
             
-                // Show the dancing GIF
+                // Bring in the dancing cat GIF
                 catDanceGif.classList.add("show");
             
             }, 5000);
