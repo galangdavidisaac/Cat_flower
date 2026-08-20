@@ -48,16 +48,59 @@ window.onload = () => {
 /* start click catbox*/
 const startScreen = document.getElementById("start-screen");
 const catBox = document.getElementById("cat-box");
+const bouquet = document.getElementById("bouquet");
+const catPrompt = document.querySelector(".cat-prompt");
+const bouquetMessage = document.getElementById("bouquet-message");
 
 catBox.addEventListener("click", () => {
 
-    startScreen.classList.add("fade-out");
+    // Prevent clicking repeatedly
+    catBox.style.pointerEvents = "none";
 
+    // Make the cat react
+    catBox.classList.add("cat-surprise");
+
+    // Hide "Tap / Click me"
+    catPrompt.classList.add("hide");
+
+    // Wait a little before revealing the flowers
     setTimeout(() => {
-        startScreen.remove();
-    }, 1000);
+
+        bouquet.classList.add("show");
+
+    }, 600);
+
+    // Show the message after the flowers bloom
+    setTimeout(() => {
+
+        bouquetMessage.classList.add("show");
+
+    }, 1500);
 
 });
+
+#cat-box.cat-surprise {
+    animation: cat-surprise 0.6s ease;
+}
+
+@keyframes cat-surprise {
+
+    0% {
+        transform: scale(1);
+    }
+
+    30% {
+        transform: scale(1.08) rotate(-3deg);
+    }
+
+    60% {
+        transform: scale(1.08) rotate(3deg);
+    }
+
+    100% {
+        transform: scale(1) rotate(0);
+    }
+}
 
 /* flower hover*/
 
