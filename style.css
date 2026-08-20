@@ -2621,7 +2621,9 @@ body {
 }
 
 #cat-box.cat-surprise {
-    animation: cat-surprise 0.6s ease;
+    animation:
+        cat-surprise 0.6s ease,
+        /* cat-breathe 2s ease-in-out 0.6s infinite; */
 }
 
 @keyframes cat-surprise {
